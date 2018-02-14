@@ -15,3 +15,5 @@ The approach taken is very simple and straight forward. Java 7 has been used for
 ArrayLists, HashMaps and Collections, all classes found in the utils package of Java were used.
 Input required is the filename - both the percentile.txt and itcont.txt. Output file generated is repeat_donors.txt.
 Directory Structure followed as per instructions.
+
+The code in run.sh first compiles the classes in src and stores them in bin folder. Then it runs the code from the bin folder files using the required filenames - input/percentile.txt input/itcont.txt and output/repeat_donors.txt.
