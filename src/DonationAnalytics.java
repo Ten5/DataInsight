@@ -6,6 +6,9 @@ import java.util.regex.Pattern;
 
 public class DonationAnalytics {
 
+	// Stores the name of the file to be written on.
+	private String outputFile;
+	
 	// Stores the input percentile value.
 	private int percentile;
 	
@@ -18,7 +21,8 @@ public class DonationAnalytics {
 	// Stores the data the repeating donors contribute to.
 	private HashMap<String, ArrayList<RecipientNode>> repeatDetailList;
 	
-	public DonationAnalytics() {
+	public DonationAnalytics(String outputFile) {
+		this.outputFile = outputFile;
 		this.percentile = 0;
 		this.inputData = new ArrayList<InputNode>();
 		repeatList = new HashMap<String, String>();
@@ -151,7 +155,7 @@ public class DonationAnalytics {
 		
 		FileWriter fw = null;
 		try {
-			fw = new FileWriter("output/repeat_donors.txt", true);
+			fw = new FileWriter(outputFile, true);
 		} catch (IOException e) {
 			System.out.println(e.getMessage());
 		}
@@ -184,9 +188,12 @@ public class DonationAnalytics {
 	
 	public static void main(String args[]) {
 		
-		DonationAnalytics da = new DonationAnalytics();
-		da.inputReader("input/percentile.txt", 1);
-		da.inputReader("input/itcont.txt", 2);
+		String inputFile1 = args[0];
+		String inputFile2 = args[1];
+		String outputFile = args[2];
+		DonationAnalytics da = new DonationAnalytics(outputFile);
+		da.inputReader(inputFile1, 1);
+		da.inputReader(inputFile2, 2);
 		da.processData();
 	}
 }
