@@ -17,4 +17,6 @@ Input required is the filename - both the percentile.txt and itcont.txt. Output 
 Directory Structure followed as per instructions.
 
 The code in run.sh first compiles the classes in src and stores them in bin folder. Then it runs the code from the bin folder files using the required filenames - input/percentile.txt input/itcont.txt and output/repeat_donors.txt.
-Please delete the repeat_donor.txt file in output folder before running run.sh. You may / may not wish to delete the .class files in bin. It will be compiled anyway.
+Please delete the repeat_donor.txt file in output folder before running run.sh. You may / may not wish to delete the .class files in bin. It will be compiled anyway. The tests are shown to run perfectly via Windows 10. There might be some \n (new line) issues on Linux which I faced on my machine.
+
+Note: I was afforded 1 additional day to submit (at 9am PST on 14th February, 2018). This was due to my committments as a full time graduate student at University of Southern California.
