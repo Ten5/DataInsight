@@ -118,9 +118,15 @@ public class DonationAnalytics {
 			// Repeating donor found.
 			if(repeatList.containsKey(key)) {
 				String value = repeatList.get(key);
+				String prevYearValue = value.substring(value.length() - 4);
 				
 				String year = in.getTransactionDate().substring(in.getTransactionDate().length() - 4);
 				String innerKey = in.getCmteID() + in.getZipCode() + year;
+				
+				// Checking if the repeat donor has contribution from a previous year.
+				if((Integer.parseInt(year)) < (Integer.parseInt(prevYearValue))) {
+					continue;
+				}
 				
 				// Recipient with same zip and same year found.
 				if(repeatDetailList.containsKey(innerKey)) {

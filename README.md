@@ -17,3 +17,4 @@ Input required is the filename - both the percentile.txt and itcont.txt. Output 
 Directory Structure followed as per instructions.
 
 The code in run.sh first compiles the classes in src and stores them in bin folder. Then it runs the code from the bin folder files using the required filenames - input/percentile.txt input/itcont.txt and output/repeat_donors.txt.
+Please delete the repeat_donor.txt file in output folder before running run.sh. You may / may not wish to delete the .class files in bin. It will be compiled anyway.
